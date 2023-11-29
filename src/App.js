@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
 import RegisterForm from './components/registerForm';
 import LoginForm from './components/LoginForm';
 import Main from './pages/main';
@@ -11,7 +10,7 @@ function App() {
   const [registered, setRegistered] = useState(false);
 
   return (
-    <div className="App">
+    <div>
        <BrowserRouter>
           <Routes>
               <Route exact path = "/main" element = {<Main 

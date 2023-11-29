@@ -1,5 +1,6 @@
 import { writecookie } from "../utils/utilities";
 import instaLogo from '../images/insta_logo_white.png';
+import loginImage from '../images/loginScreenImage.jpg';
 import { Link, Navigate } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import '../pages/login.css';
@@ -38,16 +39,21 @@ function LoginForm(props) {
     }
      console.log(props.email)
     return (
-        <div className="login-section">
-            <img className="logoWhite" src={instaLogo} alt="Instagram Logo" /> 
-            <form onSubmit={handleSubmit}>
-                <input className="emailbox" type="text" id="email" placeholder="Phone number, username or email address" required onChange = {(event) => props.setEmail(event.target.value)}></input>
-                <br></br>
-                <input className="passwordbox" type="text" id="password" placeholder="Password" required onChange = {(event) => setPassword(event.target.value)}></input>
-                <br></br>
-                <Link className="registerLink" to = "/register">Don't have a login? Register here.</Link>
-                <input type="submit" />
-            </form>
+        <div className="forms-container">
+            <div className="loginPicture">
+                <img className="loginImage" src={loginImage} alt="Login Image" />                
+            </div>
+            <div className="login-section">
+                <img className="logoWhite" src={instaLogo} alt="Instagram Logo" /> 
+                <form onSubmit={handleSubmit}>
+                    <input className="emailbox" type="text" id="email" placeholder="Phone number, username or email address" required onChange = {(event) => props.setEmail(event.target.value)}></input>
+                    <br></br>
+                    <input className="passwordbox" type="text" id="password" placeholder="Password" required onChange = {(event) => setPassword(event.target.value)}></input>
+                    <br></br>
+                    Don't have an account? <Link className="registerLink" to = "/register">Register here.</Link>
+                    <input type="Submit" value="Log in" />
+                </form>
+            </div>
         </div>
     )
 };

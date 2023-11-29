@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../App.css';
+import '../pages/main.css';
 import Logout from '../components/logout';
 import Sidebar from '../components/Sidebar';
 import heartIcon from '../images/insta_heart.png';
@@ -90,10 +90,10 @@ function Main() {
           </div>
           <div className="right-column">
             <Logout
+              setRegistered={setRegistered}
               setLoggedIn={setLoggedIn}
               setUserList={setUserList}
-              setEmail={setEmail}
-            />
+              setEmail={setEmail}/>
           </div>
         </div>
       </div>

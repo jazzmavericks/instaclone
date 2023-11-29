@@ -1,5 +1,6 @@
 import React from 'react';
-import '../App.css';
+import '../pages/main.css';
+import {useNavigate} from 'react-router-dom';
 import profileIcon from '../images/profile.png';
 import profileIcon1 from '../images/profile1.png';
 import profileIcon2 from '../images/profile2.png';
@@ -8,6 +9,7 @@ import profileIcon4 from '../images/profile4.png';
 import profileIcon5 from '../images/profile5.png';
 
 function Logout(props) {
+  const navigate = useNavigate()
     function logoutfunc(setLoggedIn, setUserList, setEmail, setRegistered) {
         try {
             document.cookie = "jwt_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";  
@@ -15,7 +17,8 @@ function Logout(props) {
             setRegistered(false);
             setUserList([]);
             setEmail("");
-            console.log("logged out");   
+            console.log("logged out");  
+            navigate ("/login");  
         } catch (error) {
             console.log(error);
         }

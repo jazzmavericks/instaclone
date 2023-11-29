@@ -37,18 +37,20 @@ function RegisterForm(props) {
     }
      console.log(props.email)
     return (
-        <div className="register-section">
-        <img className="logoWhite" src={instaLogo} alt="Instagram Logo" />
-        <p>Sign up to see photos and videos from your friends</p>
-        <form onSubmit={handleSubmit}>
-            <input className="emailbox" type="text" id="email" placeholder="Phone number, username or email address" required onChange={(event) => props.setEmail(event.target.value)}></input>
-            <br />
-            <input className="passwordbox" type="text" id="password" placeholder="Password" required onChange={(event) => setPassword(event.target.value)}></input>
-            <br />
-            <p className="regText">People who use our service may have uploaded your contact information to Instagram. Learn more</p>
-            <p className="regText">By signing up, you agree to our Terms. Learn how we collect, use and share your data in our Privacy Policy and how we use cookies and similar technology in our Cookies Policy.</p>
-            <input type="submit" />
-        </form>
+        <div className="forms-container">
+            <div className="register-section">
+                <img className="logoWhite" src={instaLogo} alt="Instagram Logo" />
+                <p>Sign up to see photos and videos from your friends</p>
+                <form onSubmit={handleSubmit}>
+                    <input className="emailbox" type="text" id="email" placeholder="Phone number, username or email address" required onChange={(event) => props.setEmail(event.target.value)}></input>
+                    <br />
+                    <input className="passwordbox" type="text" id="password" placeholder="Password" required onChange={(event) => setPassword(event.target.value)}></input>
+                    <br />
+                    <p className="regText">People who use our service may have uploaded your contact information to Instagram. Learn more</p>
+                    <p className="regText">By signing up, you agree to our Terms. Learn how we collect, use and share your data in our Privacy Policy and how we use cookies and similar technology in our Cookies Policy.</p>
+                    <input type="submit" value="Next" />
+                </form>
+            </div>
         </div>
     )
 };
