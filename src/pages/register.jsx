@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './register.css';
-import Register from './components/register';
+import RegisterForm from './components/registerForm';
 
 function Register(props) {
     const [password, setPassword] = useState("");
@@ -9,13 +9,13 @@ function Register(props) {
 
         <div>
             {!props.loggedIn && <div className="forms-container">
-            {!props.loggedIn && <Register
+            {!props.loggedIn && <RegisterForm
                 setEmail={props.setEmail}
                 email={props.email}
                 setPassword={setPassword}
                 password={password} 
                 setLoggedIn={props.setLoggedIn}>
-            </Register>}
+            </RegisterForm>}
             </div>}
   </div>)
 }

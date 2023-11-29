@@ -1,9 +1,11 @@
 import { writecookie } from "../utils/utilities";
 import instaLogo from '../images/insta_logo_white.png';
 import {useNavigate} from 'react-router-dom';
+import { useState } from "react";
 import '../pages/register.css';
 
-function Register(props) {
+function RegisterForm(props) {
+    const [password, setPassword] = useState()
     const navigate = useNavigate()
     async function sendRegisterToBackEnd(email, password, setLoggedIn, setRegistered) {
         try {
@@ -41,7 +43,7 @@ function Register(props) {
         <form onSubmit={handleSubmit}>
             <input className="emailbox" type="text" id="email" placeholder="Phone number, username or email address" required onChange={(event) => props.setEmail(event.target.value)}></input>
             <br />
-            <input className="passwordbox" type="text" id="password" placeholder="Password" required onChange={(event) => props.setPassword(event.target.value)}></input>
+            <input className="passwordbox" type="text" id="password" placeholder="Password" required onChange={(event) => setPassword(event.target.value)}></input>
             <br />
             <p className="regText">People who use our service may have uploaded your contact information to Instagram. Learn more</p>
             <p className="regText">By signing up, you agree to our Terms. Learn how we collect, use and share your data in our Privacy Policy and how we use cookies and similar technology in our Cookies Policy.</p>
@@ -51,4 +53,4 @@ function Register(props) {
     )
 };
 
-export default Register;
+export default RegisterForm;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Register from './components/register';
+import RegisterForm from './components/registerForm';
 import LoginForm from './components/LoginForm';
 import Main from './pages/main';
 
@@ -29,7 +29,7 @@ function App() {
                   loggedIn = {loggedIn} setLoggedIn = {setLoggedIn}
                   registered = {registered} setRegistered = {setRegistered}
               />} />
-              <Route exact path = "/register" element = {<Register 
+              <Route exact path = "/register" element = {<RegisterForm 
                   email = {email} setEmail={setEmail}
                   loggedIn = {loggedIn} setLoggedIn = {setLoggedIn}
                   registered = {registered} setRegistered = {setRegistered}
