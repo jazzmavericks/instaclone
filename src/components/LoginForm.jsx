@@ -3,8 +3,10 @@ import instaLogo from '../images/insta_logo_white.png';
 import { Link, Navigate } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import '../pages/login.css';
+import { useState } from "react";
 
 function LoginForm(props) {
+    const [password, setPassword] = useState() 
     const navigate = useNavigate()
     async function sendLoginToBackEnd(email, password, setLoggedIn, setRegistered) {
         try {
@@ -32,7 +34,7 @@ function LoginForm(props) {
 
     function handleSubmit(event) {
         event.preventDefault();
-        sendLoginToBackEnd(props.email, props.password, props.setLoggedIn, props.setRegistered)
+        sendLoginToBackEnd(props.email, password, props.setLoggedIn, props.setRegistered)
     }
      console.log(props.email)
     return (
@@ -41,7 +43,7 @@ function LoginForm(props) {
             <form onSubmit={handleSubmit}>
                 <input className="emailbox" type="text" id="email" placeholder="Phone number, username or email address" required onChange = {(event) => props.setEmail(event.target.value)}></input>
                 <br></br>
-                <input className="passwordbox" type="text" id="password" placeholder="Password" required onChange = {(event) => props.setPassword(event.target.value)}></input>
+                <input className="passwordbox" type="text" id="password" placeholder="Password" required onChange = {(event) => setPassword(event.target.value)}></input>
                 <br></br>
                 <Link className="registerLink" to = "/register">Don't have a login? Register here.</Link>
                 <input type="submit" />
