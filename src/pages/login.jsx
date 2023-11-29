@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import './login.css';
-import Login from './components/login';
+import LoginForm from './components/loginForm';
 
 
-function Main(props) {
+function Login(props) {
     const [password, setPassword] = useState("");
    
     return (
         <div>
             {!loggedIn && <div className="forms-container">
-            {!loggedIn && <Login
+            {!loggedIn && <LoginForm
                 setEmail={props.setEmail}
                 email={props.email}
                 setPassword={setPassword}
                 password={password}
                 setLoggedIn={props.setLoggedIn}>  
-            </Login>}
+            </LoginForm>}
             </div>}
   </div>)
 }

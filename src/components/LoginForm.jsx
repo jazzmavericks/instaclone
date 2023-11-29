@@ -2,8 +2,9 @@ import { writecookie } from "../utils/utilities";
 import instaLogo from '../images/insta_logo_white.png';
 import { Link, Navigate } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
+import '../pages/login.css';
 
-function Login(props) {
+function LoginForm(props) {
     const navigate = useNavigate()
     async function sendLoginToBackEnd(email, password, setLoggedIn, setRegistered) {
         try {
@@ -49,4 +50,4 @@ function Login(props) {
     )
 };
 
-export default Login;
+export default LoginForm;

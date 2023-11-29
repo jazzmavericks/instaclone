@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Register from './components/register';
-import Login from './components/login';
+import Login from './components/LoginForm';
 import Main from './pages/main';
 
 function App() {

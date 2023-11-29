@@ -1,6 +1,7 @@
 import { writecookie } from "../utils/utilities";
 import instaLogo from '../images/insta_logo_white.png';
 import {useNavigate} from 'react-router-dom';
+import '../pages/register.css';
 
 function Register(props) {
     const navigate = useNavigate()
