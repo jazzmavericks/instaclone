@@ -1,6 +1,11 @@
 import React from 'react';
 import '../App.css';
 import profileIcon from '../images/profile.png';
+import profileIcon1 from '../images/profile1.png';
+import profileIcon2 from '../images/profile2.png';
+import profileIcon3 from '../images/profile3.png';
+import profileIcon4 from '../images/profile4.png';
+import profileIcon5 from '../images/profile5.png';
 
 function Logout(props) {
     function logoutfunc(setLoggedIn, setUserList, setEmail, setRegistered) {
@@ -46,10 +51,10 @@ function Logout(props) {
 
         <div className="logoutRow">
             <div className="profileIconContainer">
-              <img className="profileIcon" src={profileIcon} alt="profile icon" />
+              <img className="profileIcon1" src={profileIcon1} alt="profile icon" />
             </div>
             <div className="userInfo">
-              <span><h1>Giantrobot99</h1></span>
+              <span><h1>shrubchester</h1></span>
               <span><p>Suggested for you</p></span>
             </div>
             <div className="followButtonContainer">
@@ -60,10 +65,10 @@ function Logout(props) {
 
         <div className="logoutRow">
             <div className="profileIconContainer">
-              <img className="profileIcon" src={profileIcon} alt="profile icon" />
+              <img className="profileIcon2" src={profileIcon2} alt="profile icon" />
             </div>
             <div className="userInfo">
-              <span><h1>bananaman2023</h1></span>
+              <span><h1>welovegoodtimes</h1></span>
               <span><p>Suggested for you</p></span>
             </div>
             <div className="followButtonContainer">
@@ -73,7 +78,7 @@ function Logout(props) {
 
         <div className="logoutRow">
             <div className="profileIconContainer">
-              <img className="profileIcon" src={profileIcon} alt="profile icon" />
+              <img className="profileIcon3" src={profileIcon3} alt="profile icon" />
             </div>
             <div className="userInfo">
               <span><h1>Santa.claws25th</h1></span>
@@ -86,7 +91,7 @@ function Logout(props) {
 
         <div className="logoutRow">
             <div className="profileIconContainer">
-              <img className="profileIcon" src={profileIcon} alt="profile icon" />
+              <img className="profileIcon4" src={profileIcon4} alt="profile icon" />
             </div>
             <div className="userInfo">
               <span><h1>ObamaLlama</h1></span>
@@ -99,7 +104,7 @@ function Logout(props) {
 
         <div className="logoutRow">
             <div className="profileIconContainer">
-              <img className="profileIcon" src={profileIcon} alt="profile icon" />
+              <img className="profileIcon5" src={profileIcon5} alt="profile icon" />
             </div>
             <div className="userInfo">
               <span><h1>VladPutin99</h1></span>

@@ -1,10 +1,13 @@
 import { writecookie } from "../utils/utilities";
+import instaLogo from '../images/insta_logo_white.png';
+import {useNavigate} from 'react-router-dom';
 
 function Register(props) {
+    const navigate = useNavigate()
     async function sendRegisterToBackEnd(email, password, setLoggedIn, setRegistered) {
         try {
             const response = await fetch(
-                "http://localhost:5001/register",
+                "https://end-user-api2.onrender.com/register",
                 {
                     method: "POST",
                     headers: {"Content-Type" : "application/json"},
@@ -19,6 +22,7 @@ function Register(props) {
             writecookie("jwt_token",data.token,7);
             setLoggedIn(false);
             setRegistered(true);
+            navigate ("/main"); 
         } catch (error) {
             console.log(error)
         }
@@ -30,15 +34,16 @@ function Register(props) {
     }
      console.log(props.email)
     return (
-        <div class="register-section">
-        <h2>Register User</h2>
+        <div className="register-section">
+        <img className="logoWhite" src={instaLogo} alt="Instagram Logo" />
+        <p>Sign up to see photos and videos from your friends</p>
         <form onSubmit={handleSubmit}>
-            <label for="email">Enter your email</label>
-            <input className="emailbox" type="text" id="email" required onChange={(event) => props.setEmail(event.target.value)}></input>
+            <input className="emailbox" type="text" id="email" placeholder="Phone number, username or email address" required onChange={(event) => props.setEmail(event.target.value)}></input>
             <br />
-            <label for="password">Enter your new password</label>
-            <input className="passwordbox" type="text" id="password" required onChange={(event) => props.setPassword(event.target.value)}></input>
+            <input className="passwordbox" type="text" id="password" placeholder="Password" required onChange={(event) => props.setPassword(event.target.value)}></input>
             <br />
+            <p className="regText">People who use our service may have uploaded your contact information to Instagram. Learn more</p>
+            <p className="regText">By signing up, you agree to our Terms. Learn how we collect, use and share your data in our Privacy Policy and how we use cookies and similar technology in our Cookies Policy.</p>
             <input type="submit" />
         </form>
         </div>

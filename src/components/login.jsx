@@ -1,10 +1,14 @@
 import { writecookie } from "../utils/utilities";
+import instaLogo from '../images/insta_logo_white.png';
+import { Link, Navigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 function Login(props) {
+    const navigate = useNavigate()
     async function sendLoginToBackEnd(email, password, setLoggedIn, setRegistered) {
         try {
             const response = await fetch(
-                "http://localhost:5001/loginUser",
+                "https://end-user-api2.onrender.com/loginUser",
                 {
                     method: "POST",
                     headers: {"Content-Type" : "application/json"},
@@ -19,6 +23,7 @@ function Login(props) {
             writecookie("jwt_token",data.token,7);
             setLoggedIn(true);
             setRegistered(true);
+            navigate("/main");
         } catch (error) {
             console.log(error)
         }
@@ -30,15 +35,14 @@ function Login(props) {
     }
      console.log(props.email)
     return (
-        <div class="login-section">
-            <h2>Login to Account</h2>
+        <div className="login-section">
+            <img className="logoWhite" src={instaLogo} alt="Instagram Logo" /> 
             <form onSubmit={handleSubmit}>
-                <label for="email">Enter your email</label>
-                <input className="emailbox" type="text" id="email" required onChange = {(event) => props.setEmail(event.target.value)}></input>
+                <input className="emailbox" type="text" id="email" placeholder="Phone number, username or email address" required onChange = {(event) => props.setEmail(event.target.value)}></input>
                 <br></br>
-                <label for="password">Enter your password</label>
-                <input className="passwordbox" type="text" id="password" required onChange = {(event) => props.setPassword(event.target.value)}></input>
+                <input className="passwordbox" type="text" id="password" placeholder="Password" required onChange = {(event) => props.setPassword(event.target.value)}></input>
                 <br></br>
+                <Link className="registerLink" to = "/register">Don't have a login? Register here.</Link>
                 <input type="submit" />
             </form>
         </div>
