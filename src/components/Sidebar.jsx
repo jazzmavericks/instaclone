@@ -1,3 +1,4 @@
+// Importing necessary modules, assets, and components
 import React from 'react';
 import '../Sidebar.css';
 import { Link } from 'react-router-dom';
@@ -12,12 +13,20 @@ import createIcon from '../images/create.png';
 import profileIcon from '../images/profile.png';
 import hamburgerIcon from '../images/hamburger.png';
 
+// Creating a functional component named Sidebar
 function Sidebar() {
   return (
+    // Sidebar container
     <div className="sidebar">
-      <img className="logo" src={instaLogo} alt="Instagram Logo" />      
+      {/* Instagram Logo */}
+      <img className="logo" src={instaLogo} alt="Instagram Logo" />
+
+      {/* List of navigation items */}
       <ul>
-        <li><Link to = "/"><img className="menuIcon" src={homeIcon} alt="home icon" /></Link> <span>Home</span></li>
+        {/* Link to Home */}
+        <li><Link to="/"><img className="menuIcon" src={homeIcon} alt="home icon" /></Link> <span>Home</span></li>
+
+        {/* Other navigation items */}
         <li><img className="menuIcon" src={searchIcon} alt="search icon" /> Search</li>
         <li><img className="menuIcon" src={exploreIcon} alt="explore icon" /> Explore</li>
         <li><img className="menuIcon" src={reelsIcon} alt="reels icon" /> Reels</li>
